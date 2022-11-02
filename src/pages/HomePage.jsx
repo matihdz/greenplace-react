@@ -5,7 +5,7 @@ import { Map } from "../map";
 
 export const HomePage = () => {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyBC6xje6H66fNkxleDZDNPqRfzalXSi5ck",
+    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
   });
 
   if (!isLoaded) return <div>Loading...</div>;
