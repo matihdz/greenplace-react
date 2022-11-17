@@ -17,15 +17,17 @@ export const ProfilePage = () => {
       >
         John Doe
       </Typography>
-      <LinearProgressWithLabel value={51} color={"tertiary"} />
-      {levels.map((level) => (
-        <LevelBenefitsCard
-          key={level.id}
-          level={level.label}
-          benefits={level.benefits}
-          isCurrent={level.id === 1}
-        />
-      ))}
+      <div className="profile-tour-step-1">
+        <LinearProgressWithLabel value={51} color={"tertiary"} />
+        {levels.map((level) => (
+          <LevelBenefitsCard
+            key={level.id}
+            level={level.label}
+            benefits={level.benefits}
+            isCurrent={level.id === 1}
+          />
+        ))}
+      </div>
     </Box>
   );
 };

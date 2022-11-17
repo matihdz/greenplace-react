@@ -1,4 +1,11 @@
-import { Button, Card, CardActionArea, CardContent, Grid, Typography } from "@mui/material";
+import {
+  Button,
+  Card,
+  CardActionArea,
+  CardContent,
+  Grid,
+  Typography,
+} from "@mui/material";
 
 export const EventCard = ({
   title = "",
@@ -23,7 +30,7 @@ export const EventCard = ({
             <Typography variant="body2" color="text.secondary">
               {description}
             </Typography>
-            <Button variant="contained" sx={{ mt: 3, mb: 2, maxWidth: 345 }}>
+            <Button variant="contained" sx={{ mt: 3, mb: 2, maxWidth: 345 }} className={'event-tour-step-1'}>
               Voy a ir!
             </Button>
             <Typography variant="body2" color="text.secondary">

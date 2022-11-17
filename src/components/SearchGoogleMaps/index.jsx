@@ -24,6 +24,7 @@ export const SearchGoogleMaps = () => {
         sx={{ ml: 1, flex: 1 }}
         placeholder="Buscar..."
         inputProps={{ "aria-label": "search custom location" }}
+        
       />
       <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
         <SearchIcon />

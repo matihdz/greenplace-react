@@ -45,14 +45,14 @@ export const Map = () => {
         setCurrentLocation({ lat, lng });
       }
     );
-  }
+  };
 
   useEffect(() => {
     calculateCurrentLocation();
   }, []);
 
   useEffect(() => {
-    if(currentLocation) {
+    if (currentLocation) {
       calculateRoute();
     }
   }, [currentLocation]);
@@ -66,13 +66,15 @@ export const Map = () => {
         mapContainerClassName="map-container"
       >
         {currentLocation && (
-          <MarkerF
-            position={currentLocation}
-            icon={{
-              url: require("../assets/svg/person.svg"),
-              scaledSize: new window.google.maps.Size(30, 30),
-            }}
-          />
+          <span>
+            <MarkerF
+              position={currentLocation}
+              icon={{
+                url: require("../assets/svg/person.svg"),
+                scaledSize: new window.google.maps.Size(30, 30),
+              }}
+            />
+          </span>
         )}
         {greenpoints &&
           greenpoints.map((marker) => (

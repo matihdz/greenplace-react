@@ -1,5 +1,5 @@
+import { Box } from "@mui/material";
 import { useLoadScript } from "@react-google-maps/api";
-import React from "react";
 import { SearchGoogleMaps } from "../components/SearchGoogleMaps";
 import { Map } from "../map";
 
@@ -8,11 +8,12 @@ export const HomePage = () => {
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
   });
 
-  if (!isLoaded) return <div>Loading...</div>;
   return (
-    <>
-      <SearchGoogleMaps />
-      {isLoaded && <Map />}
-    </>
+    <Box>
+      <div className="home-tour-step-1">
+        <SearchGoogleMaps />
+      </div>
+      <div className="home-tour-step-2">{isLoaded && <Map />}</div>
+    </Box>
   );
 };

@@ -29,15 +29,18 @@ export const NavBar = () => {
         <BottomNavigationAction
           icon={<LocationOnOutlinedIcon />}
           value={"/home"}
+          className="nav-tour-step-1"
         />
-        <BottomNavigationAction icon={<InfoOutlinedIcon />} value={"/info"} />
+        <BottomNavigationAction icon={<InfoOutlinedIcon />} value={"/info"} className="nav-tour-step-2"/>
         <BottomNavigationAction
           icon={<EventOutlinedIcon />}
           value={"/events"}
+          className="nav-tour-step-3"
         />
         <BottomNavigationAction
           icon={<AccountCircleOutlinedIcon />}
           value={"/profile"}
+          className="nav-tour-step-4"
         />
       </BottomNavigation>
     </Paper>
