@@ -1,8 +1,11 @@
 import { GoogleMap, MarkerF, DirectionsRenderer } from "@react-google-maps/api";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { setRouteValues } from "../store/features/map/routeSlice";
 import "./styles.css";
 
 export const Map = () => {
+  const dispatch = useDispatch();
   /* States */
   const [currentLocation, setCurrentLocation] = useState();
   const [greenpoints, setGreenpoints] = useState([
@@ -15,8 +18,6 @@ export const Map = () => {
   const [bounds, setBounds] = useState(null);
   /* ------- */
   const [directionsResponse, setDirectionsResponse] = useState(null);
-  const [distance, setDistance] = useState(null);
-  const [duration, setDuration] = useState(null);
   /* Scripts */
   const onMapLoad = (map) => {
     google.maps.event.addListener(map, "bounds_changed", () =>
@@ -35,8 +36,12 @@ export const Map = () => {
       travelMode: google.maps.TravelMode.WALKING,
     });
     setDirectionsResponse(results);
-    setDistance(results.routes[0].legs[0].distance.text);
-    setDuration(results.routes[0].legs[0].duration.text);
+    dispatch(setRouteValues({
+      distance: results.routes[0].legs[0].distance.text,
+      duration: results.routes[0].legs[0].duration.text,
+      steps: results.routes[0].legs[0].steps,
+    }))
+
   };
 
   const calculateCurrentLocation = async () => {
