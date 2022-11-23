@@ -7,12 +7,12 @@ import { EventsPage } from "../pages/EventsPage";
 export const GreenplaceRoutes = () => {
   return (
     <Routes>
-      <Route path="home" element={<HomePage />} />
+      <Route path="/*" element={<HomePage />} />
       <Route path="info" element={<InfoPage />} />
       <Route path="events" element={<EventsPage />} />
       <Route path="profile" element={<ProfilePage />} />
 
-      <Route path="/*" element={<Navigate to="/home" />} />
+      {/* <Route path="/*" element={<Navigate to="/" />} /> */}
     </Routes>
   );
 };
